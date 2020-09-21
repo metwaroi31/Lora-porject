@@ -3,7 +3,7 @@
         {
             "name": "Target 1",
             "includePath": [
-                "d:\\project Lora\\Lora-porject"
+                "d:\\project Lora\\Lora-porject\\Lora"
             ],
             "defines": [
                 "__C51__",

@@ -1,0 +1,6 @@
+".\Objects\STARTUP.obj",
+".\Objects\main.obj",
+".\Objects\init.obj",
+".\Objects\util.obj" 
+TO ".\Objects\robot" 
+PRINT(".\Listings\robot.m51") RAMSIZE(256) 
