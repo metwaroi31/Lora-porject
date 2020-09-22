@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    09/22/2020  20:14:18  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    09/22/2020  22:00:43  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
@@ -37,11 +37,11 @@ LINK MAP OF MODULE:  .\Objects\robot (?C_STARTUP)
             CODE    0000H     0003H     ABSOLUTE     
                     0003H     07FDH                  *** GAP ***
             CODE    0800H     023BH     UNIT         ?C?LIB_CODE
-            CODE    0A3BH     0071H     UNIT         ?PR?_DELAY?UTIL
-            CODE    0AACH     0019H     UNIT         ?PR?MAIN?MAIN
-            CODE    0AC5H     000CH     UNIT         ?C_C51STARTUP
-            CODE    0AD1H     0009H     UNIT         ?PR?INIT_TIMER_0?INIT
-            CODE    0ADAH     0006H     UNIT         ?PR?_PUT_VALUE_TIMER?UTIL
+            CODE    0A3BH     0083H     UNIT         ?PR?_DELAY?UTIL
+            CODE    0ABEH     0019H     UNIT         ?PR?MAIN?MAIN
+            CODE    0AD7H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0AE3H     0009H     UNIT         ?PR?INIT_TIMER_0?INIT
+            CODE    0AECH     0006H     UNIT         ?PR?_PUT_VALUE_TIMER?UTIL
 
 
 
@@ -59,7 +59,7 @@ SEGMENT                             DATA_GROUP
   +--> ?PR?_DELAY?UTIL
 
 ?PR?_DELAY?UTIL                   0008H    000AH
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/22/2020  20:14:18  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/22/2020  22:00:43  PAGE 2
 
 
   +--> ?PR?_PUT_VALUE_TIMER?UTIL
@@ -72,7 +72,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\robot (?C_STARTUP)
   ----------------------------------
 
   -------         MODULE        ?C_STARTUP
-  C:0AC5H         SEGMENT       ?C_C51STARTUP
+  C:0AD7H         SEGMENT       ?C_C51STARTUP
   I:0012H         SEGMENT       ?STACK
   C:0000H         PUBLIC        ?C_STARTUP
   D:00E0H         SYMBOL        ACC
@@ -82,7 +82,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\robot (?C_STARTUP)
   N:0000H         SYMBOL        IBPSTACK
   N:0100H         SYMBOL        IBPSTACKTOP
   N:0080H         SYMBOL        IDATALEN
-  C:0AC8H         SYMBOL        IDATALOOP
+  C:0ADAH         SYMBOL        IDATALOOP
   N:0000H         SYMBOL        PBPSTACK
   N:0100H         SYMBOL        PBPSTACKTOP
   N:0000H         SYMBOL        PDATALEN
@@ -91,18 +91,18 @@ SYMBOL TABLE OF MODULE:  .\Objects\robot (?C_STARTUP)
   N:0000H         SYMBOL        PPAGEENABLE
   D:00A0H         SYMBOL        PPAGE_SFR
   D:0081H         SYMBOL        SP
-  C:0AC5H         SYMBOL        STARTUP1
+  C:0AD7H         SYMBOL        STARTUP1
   N:0000H         SYMBOL        XBPSTACK
   N:0000H         SYMBOL        XBPSTACKTOP
   N:0000H         SYMBOL        XDATALEN
   N:0000H         SYMBOL        XDATASTART
   C:0000H         LINE#         126
-  C:0AC5H         LINE#         133
-  C:0AC7H         LINE#         134
-  C:0AC8H         LINE#         135
-  C:0AC9H         LINE#         136
-  C:0ACBH         LINE#         185
-  C:0ACEH         LINE#         196
+  C:0AD7H         LINE#         133
+  C:0AD9H         LINE#         134
+  C:0ADAH         LINE#         135
+  C:0ADBH         LINE#         136
+  C:0ADDH         LINE#         185
+  C:0AE0H         LINE#         196
   -------         ENDMOD        ?C_STARTUP
 
   -------         MODULE        MAIN
@@ -112,23 +112,23 @@ SYMBOL TABLE OF MODULE:  .\Objects\robot (?C_STARTUP)
   D:00B0H         PUBLIC        P3
   D:00A8H         PUBLIC        IE
   D:00B8H         PUBLIC        IP
-  C:0AACH         PUBLIC        main
+  C:0ABEH         PUBLIC        main
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
   D:00C8H         PUBLIC        T2CON
   D:00D0H         PUBLIC        PSW
   -------         PROC          MAIN
-  C:0AACH         LINE#         5
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/22/2020  20:14:18  PAGE 3
+  C:0ABEH         LINE#         5
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/22/2020  22:00:43  PAGE 3
 
 
-  C:0AACH         LINE#         7
-  C:0AAFH         LINE#         8
-  C:0AAFH         LINE#         9
-  C:0AB2H         LINE#         10
-  C:0AB9H         LINE#         11
-  C:0ABCH         LINE#         12
-  C:0AC3H         LINE#         13
+  C:0ABEH         LINE#         7
+  C:0AC1H         LINE#         8
+  C:0AC1H         LINE#         9
+  C:0AC4H         LINE#         10
+  C:0ACBH         LINE#         11
+  C:0ACEH         LINE#         12
+  C:0AD5H         LINE#         13
   -------         ENDPROC       MAIN
   -------         ENDMOD        MAIN
 
@@ -141,16 +141,16 @@ SYMBOL TABLE OF MODULE:  .\Objects\robot (?C_STARTUP)
   D:0098H         PUBLIC        SCON
   D:0089H         PUBLIC        TMOD
   D:0088H         PUBLIC        TCON
-  C:0AD1H         PUBLIC        init_timer_0
+  C:0AE3H         PUBLIC        init_timer_0
   B:0088H.4       PUBLIC        TR0
   D:00C8H         PUBLIC        T2CON
   D:00D0H         PUBLIC        PSW
   -------         PROC          INIT_TIMER_0
-  C:0AD1H         LINE#         4
-  C:0AD1H         LINE#         5
-  C:0AD4H         LINE#         6
-  C:0AD7H         LINE#         7
-  C:0AD9H         LINE#         8
+  C:0AE3H         LINE#         4
+  C:0AE3H         LINE#         5
+  C:0AE6H         LINE#         6
+  C:0AE9H         LINE#         7
+  C:0AEBH         LINE#         8
   -------         ENDPROC       INIT_TIMER_0
   -------         ENDMOD        INIT
 
@@ -163,9 +163,11 @@ SYMBOL TABLE OF MODULE:  .\Objects\robot (?C_STARTUP)
   D:00B8H         PUBLIC        IP
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
+  B:0088H.5       PUBLIC        TF0
   D:008CH         PUBLIC        TH0
   D:008AH         PUBLIC        TL0
-  C:0ADAH         PUBLIC        _put_value_timer
+  B:0088H.4       PUBLIC        TR0
+  C:0AECH         PUBLIC        _put_value_timer
   D:00C8H         PUBLIC        T2CON
   D:00D0H         PUBLIC        PSW
   -------         PROC          _DELAY
@@ -177,26 +179,34 @@ SYMBOL TABLE OF MODULE:  .\Objects\robot (?C_STARTUP)
   D:0011H         SYMBOL        i
   -------         ENDDO         
   C:0A3BH         LINE#         3
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/22/2020  22:00:43  PAGE 4
+
+
   C:0A3FH         LINE#         4
   C:0A4BH         LINE#         5
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/22/2020  20:14:18  PAGE 4
-
-
   C:0A69H         LINE#         6
   C:0A74H         LINE#         8
   C:0A7EH         LINE#         9
-  C:0A88H         LINE#         10
-  C:0A8EH         LINE#         11
-  C:0AA7H         LINE#         12
-  C:0AABH         LINE#         13
+  C:0A80H         LINE#         10
+  C:0A83H         LINE#         11
+  C:0A85H         LINE#         12
+  C:0A87H         LINE#         13
+  C:0A91H         LINE#         14
+  C:0A97H         LINE#         15
+  C:0A99H         LINE#         16
+  C:0A9CH         LINE#         17
+  C:0A9EH         LINE#         18
+  C:0AA0H         LINE#         19
+  C:0AB9H         LINE#         20
+  C:0ABDH         LINE#         21
   -------         ENDPROC       _DELAY
   -------         PROC          _PUT_VALUE_TIMER
   D:0006H         SYMBOL        number_of_machine_cycles
-  C:0ADAH         LINE#         15
-  C:0ADAH         LINE#         18
-  C:0ADCH         LINE#         19
-  C:0ADDH         LINE#         20
-  C:0ADFH         LINE#         21
+  C:0AECH         LINE#         23
+  C:0AECH         LINE#         26
+  C:0AEEH         LINE#         27
+  C:0AEFH         LINE#         28
+  C:0AF1H         LINE#         29
   -------         ENDPROC       _PUT_VALUE_TIMER
   -------         ENDMOD        UTIL
 
@@ -223,8 +233,8 @@ SYMBOL TABLE OF MODULE:  .\Objects\robot (?C_STARTUP)
   -------         ENDMOD        ?C?LNEG
 
 ******************************************************************************
-* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00A8H BYTE ( 8%) *
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00BAH BYTE ( 9%) *
 ******************************************************************************
 
-Program Size: data=19.0 xdata=0 code=739
+Program Size: data=19.0 xdata=0 code=757
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
