@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   UTIL                                                              09/21/2020 20:48:25 PAGE 1   
+C51 COMPILER V9.60.0.0   UTIL                                                              09/22/2020 20:06:41 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE UTIL
@@ -8,14 +8,35 @@ COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE util.c OPTIMIZE(8,SPEED) BROWSE 
 
 line level    source
 
+   1          #include <util.h>
+   2          #include <reg52.h>
+   3          void delay (unsigned int mili_second) {
+   4   1          float time_of_one_cyle = 0.001085;
+   5   1          unsigned long number_of_cycle = mili_second / time_of_one_cyle;
+   6   1          unsigned char number_of_loops = number_of_cycle / 65536;
+   7   1          unsigned char i;
+   8   1          put_value_timer(number_of_cycle % 65536);
+   9   1          for (i = 0; i < number_of_loops;i++) {
+  10   2              put_value_timer (65536);
+  11   2              number_of_cycle -= 65536;
+  12   2          }
+  13   1      }
+  14          
+  15          void put_value_timer (unsigned int number_of_machine_cycles) {
+  16   1          //unsigned char left_over_cycles;
+  17   1          //unsigned char number_of_loops;
+  18   1          TL0 = number_of_machine_cycles;
+  19   1          number_of_machine_cycles = number_of_machine_cycles >> 8;
+  20   1          TH0 = number_of_machine_cycles;
+  21   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   ----    ----
+   CODE SIZE        =    119    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =   ----    ----
+   DATA SIZE        =   ----      10
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
