@@ -11,11 +11,11 @@ void delay (unsigned int mili_second) {
     TF0 = 0;
     TR0 = 1;
     for (i = 0; i < number_of_loops;i++) {
-        put_value_timer (65536);
+        put_value_timer (6);
         TR0 = 1;
         while (TF0 == 0);
         TF0 = 0;
-        TR0 = 1;
+        TR0 = 1;    
         number_of_cycle -= 65536;
     }
 }
