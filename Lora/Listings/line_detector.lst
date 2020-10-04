@@ -1,0 +1,43 @@
+C51 COMPILER V9.60.0.0   LINE_DETECTOR                                                     10/04/2020 19:44:24 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE LINE_DETECTOR
+OBJECT MODULE PLACED IN .\Objects\line_detector.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE line_detector.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\List
+                    -ings\line_detector.lst) TABS(2) OBJECT(.\Objects\line_detector.obj)
+
+line level    source
+
+   1          #include <line_detector.h>
+   2          #include <motor.h>
+*** WARNING C318 IN LINE 2 OF line_detector.c: can't open file 'motor.h'
+   3          #include <reg52.h>
+   4          // int line_detection = 1;
+   5          
+   6          sbit test = P2 ^ 4;
+   7          sbit motor1_pin_1 = P1 ^ 0;
+   8          sbit motor1_pin_2 = P1 ^ 1;
+   9          sbit motor2_pin_1 = P1 ^ 2;
+  10          sbit motor2_pin_2 = P1 ^ 3;
+  11          void handle_line_detection(void) interrupt 0 {
+  12   1          
+  13   1          motor1_pin_1 = ~motor1_pin_1;
+  14   1          motor1_pin_2 = ~motor1_pin_2;
+  15   1          motor2_pin_1 = ~motor2_pin_1;
+  16   1          motor2_pin_2 = ~motor2_pin_2;
+  17   1          test = ~test;
+  18   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     11    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

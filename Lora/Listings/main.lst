@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   MAIN                                                              09/22/2020 20:14:18 PAGE 1   
+C51 COMPILER V9.60.0.0   MAIN                                                              10/04/2020 19:04:45 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE MAIN
@@ -11,22 +11,28 @@ line level    source
    1          #include <reg52.h>
    2          #include <init.h>
    3          #include <util.h>
-   4          
-   5          void main () {
-   6   1        
-   7   1          init_timer_0();
-*** WARNING C206 IN LINE 7 OF main.c: 'init_timer_0': missing function-prototype
-   8   1          while(1) {
-   9   2            P2 = 0xFF;
-  10   2            delay(1000);
-  11   2            P2 = 0x00;
-  12   2            delay(1000);
-  13   2          }
-  14   1      }
+   4          #include <line_detector.h>
+   5          
+   6          sbit test = P2 ^ 0;
+   7          
+   8          void main () {
+   9   1        
+  10   1          EA = 1;
+  11   1          init_timer_0();
+  12   1          init_external_interrupt_0();
+  13   1          init_motor();
+  14   1          
+  15   1          while(1) {
+  16   2            test = 1;
+  17   2            delay(1000);
+  18   2            test = 0;
+  19   2            delay(1000);
+  20   2          }
+  21   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     25    ----
+   CODE SIZE        =     31    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
@@ -36,4 +42,4 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
 END OF MODULE INFORMATION.
 
 
-C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
