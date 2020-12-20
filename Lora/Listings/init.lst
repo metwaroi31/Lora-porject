@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   INIT                                                              09/22/2020 18:35:41 PAGE 1   
+C51 COMPILER V9.60.0.0   INIT                                                              10/04/2020 19:21:24 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE INIT
@@ -11,15 +11,33 @@ line level    source
    1          #include <reg52.h>
    2          #include <init.h>
    3          
-   4          void init_timer_0() {
-   5   1          TMOD &= 0xF0;
-   6   1          TMOD |= 0x09;
-   7   1          TR0 = 0;
-   8   1      }
+   4          sbit motor1_pin_1 = P1 ^ 0;
+   5          sbit motor1_pin_2 = P1 ^ 1;
+   6          sbit motor2_pin_1 = P1 ^ 2;
+   7          sbit motor2_pin_2 = P1 ^ 3;
+   8          
+   9          void init_timer_0() {
+  10   1          TMOD &= 0xF0;
+  11   1          TMOD |= 0x09;
+  12   1          TR0 = 0;
+  13   1      }
+  14          
+  15          void init_external_interrupt_0() {
+  16   1          EX0 = 1;
+  17   1          IT0 = 1; 
+  18   1      }
+  19          
+  20          void init_motor () {
+  21   1          // P0 = 0xFA;
+  22   1          motor1_pin_1 = 0;
+  23   1          motor1_pin_2 = 1;
+  24   1          motor2_pin_1 = 0;
+  25   1          motor2_pin_2 = 1;
+  26   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =      9    ----
+   CODE SIZE        =     23    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----

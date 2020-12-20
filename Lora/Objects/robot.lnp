@@ -1,6 +1,7 @@
 ".\Objects\STARTUP.obj",
 ".\Objects\main.obj",
 ".\Objects\init.obj",
-".\Objects\util.obj" 
+".\Objects\util.obj",
+".\Objects\line_detector.obj" 
 TO ".\Objects\robot" 
 PRINT(".\Listings\robot.m51") RAMSIZE(256) 
